@@ -3,6 +3,7 @@ package lambda.application;
 import lambda.model.entities.Product;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Program {
@@ -32,8 +33,9 @@ public class Program {
 
         // list.sort(new MyComparator()); This will work.
 
+        // list.sort((p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase())); This will work
 
-        list.sort((p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
+        list.sort(Comparator.comparing(p -> p.getName().toUpperCase()));
 
         for(Product p : list){
             System.out.println(p);
