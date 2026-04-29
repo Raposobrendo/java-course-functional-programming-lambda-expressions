@@ -17,7 +17,10 @@ public class SideProgram {
         prod.add(new SideProduct("Desk", 500.0));
 
 
-        List <String> names = prod.stream().filter(p -> p.getPrice() > 50).sorted(Comparator.comparing((SideProduct::getPrice))).map(p -> p.getName().toUpperCase()).toList();
+        List <String> names = prod.stream()
+                .filter(p -> p.getPrice() > 50)
+                .sorted(Comparator.comparing((SideProduct::getPrice)))
+                .map(p -> p.getName().toUpperCase()).toList();
 
         System.out.println(names);
 
